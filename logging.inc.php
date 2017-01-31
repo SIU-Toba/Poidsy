@@ -27,21 +27,21 @@ class Logger {
  const ENABLE_LOGGING = false;
  const LOGGING_FILENAME = '/poidsy-debug.log';
  const TRUNCATE_ARGS = true;
- const LOGGING_DIRNAME = '/tmp';
+ static $LOGGING_DIRNAME = '/tmp';
 
  private static $fh;
 
  public static function setLogDirectory($dirName)
  {
     if (is_dir($dirName) && realpath($dirName) !== false) {
-      self::LOGGING_DIRNAME = $dirName;
+      self::$LOGGING_DIRNAME = $dirName;
     }
  }
 
  public static function log($message) {
   if (self::ENABLE_LOGGING) {
    if (self::$fh == null) {
-    self::$fh = fopen(self::LOGGING_DIRNAME . self::LOGGING_FILENAME, 'a');
+    self::$fh = fopen(self::$LOGGING_DIRNAME . self::LOGGING_FILENAME, 'a');
    }
 
    $args = func_get_args();
