@@ -1,0 +1,9 @@
+{
+    "name": "siu-toba/poidsy",
+    "description": "Poidsy is a PHP OpenID consumer",
+    "homepage": "https://github.com/csmith/Poidsy",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.2.10"
+    }
+}
